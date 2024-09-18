@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2024 a las 02:29:51
+-- Tiempo de generación: 18-09-2024 a las 02:41:57
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -40,6 +40,7 @@ CREATE TABLE `categoria` (
 
 CREATE TABLE `producto` (
   `ID` int(11) NOT NULL,
+  `Nombre` varchar(200) NOT NULL,
   `marca` varchar(100) NOT NULL,
   `modelo` int(11) NOT NULL,
   `kilometros` int(11) NOT NULL,
