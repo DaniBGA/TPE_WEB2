@@ -24,3 +24,4 @@ La tabla principal es producto, en la cual se relaciona la marca de la tabla cat
 Integrantes :
 Sequeira Lautaro (46.693.324)
 Gongora Banegas Daniel (46116932)
+![WhatsApp Image 2024-09-17 at 21 44 03](https://github.com/user-attachments/assets/40596eb7-f905-4388-9a28-13f60a09cbd3)
