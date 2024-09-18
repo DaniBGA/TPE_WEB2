@@ -6,20 +6,20 @@ Nuestra base de datos trata de una concesionaria de autos, donde se almacena inf
 Estructura de la Base de Datos:
 Tabla categoria:
 
-ID: Identificador único de la categoría.
-TIPO: Tipo de vehículo (por ejemplo, SUV, Sedán).
-ID_Modelo: Modelo del auto.
-ID_año: Año del modelo.
-Precio: Precio de referencia para la categoría.
+marca: para identificar la marca de el auto.
+descripcion: para tener una descripcion de la marca del auto.
+
+
 Tabla producto (autos):
 
-ID: Identificador único del auto.
-Modelo: Nombre del modelo del auto.
-Año: Año del auto.
-Precio: Precio del auto.
-categoria_id: Relación que conecta el auto con una categoría de la tabla categoria.
-Relación entre tablas:
-La tabla principal es producto, en la cual se relaciona el categoria_id con la tabla categoria. Esto permite que un auto esté asociado a una única categoría, mientras que una categoría puede tener múltiples autos.
+nombre: para saber que nombre del auto.
+modelo: modelo de vehículo (por ejemplo, 2004, 2010).
+kilometros: kilometros del auto (si es 0km es nuevo; si tiene un valor distinto de 0 es usado).
+motor: para saber que tipo de motor contiene el auto.
+marca: se vincula a la tabla (categoria) para saber de que marca es el auto.
+Precio: Precio de referencia para el producto.
+
+La tabla principal es producto, en la cual se relaciona la marca de la tabla categoria. Esto permite que un auto esté asociado a una única categoría, mientras que una categoría puede tener múltiples autos.
 
 Integrantes :
 Sequeira Lautaro (46.693.324)
