@@ -1,0 +1,531 @@
+/* Establece valores predeterminados para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+}
+
+/* Estilo para el encabezado */
+header {
+    font-family: helvetica;
+    padding: 45px 0;
+    transition: 0.7s;
+    background-color: #fff
+}
+
+/* Estilo para la clase .menu */
+.menu {
+    padding: 15px;
+    max-width: 1110px;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+/* Estilo para los elementos de la barra de navegación */
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: black;
+    display: block;
+    transition: 0.7s;
+}
+
+/* Estilo al pasar el cursor sobre los elementos de la barra de navegación */
+.menu .navbar ul li a:hover {
+    color: #870909;
+}
+
+/* Esconde el elemento con ID menu */
+#menu {
+    display: none;
+}
+
+/* Estilo para el logo */
+.logo {
+    border: #fff;
+    color: #870909;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 1.5s;
+}
+
+
+/* Estilo para la sección de presentación con imagen de fondo */
+.full {
+    width: 100%;
+    height: 70vh;
+    background: url('../img/fondo.jpeg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    position: relative;
+}
+
+/* Estilo para el contenido dentro de la sección de presentación */
+.full-inner {
+    text-align: left;
+    padding: 20px;
+}
+
+.content {
+    font-weight: 700;
+    font-style: normal;
+    max-width: 800px;
+    padding-left: 150px;
+    padding-top: 100px;
+    color: #ffffff;
+}
+
+/* Estilo para los títulos dentro de la sección de presentación */
+.content h1 {
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+.content h3 {
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+/* Estilo para la navegación dentro de la sección de presentación */
+.navinicio {
+    padding: 15px;
+    max-width: 1110px;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilo para los elementos de la navegación dentro de la sección de presentación */
+.navinicio ul li {
+    position: relative;
+    float: left;
+    padding: 10px;
+}
+
+.navinicio ul li a {
+    font-size: 18px;
+    padding: 20px;
+    display: block;
+    color: #fff;
+}
+
+/* Estilo para el botón "ver" */
+.ver {
+    cursor: pointer;
+    display: none;
+    border-radius: 5px;
+    background-color: #870909;
+    padding: 20px 10px;
+}
+
+/* Estilo al pasar el cursor sobre el botón "ver" */
+.ver:hover {
+    background-color: #630404b5;
+}
+
+/* Estilo para el botón "buscar" */
+.buscar {
+    cursor: pointer;
+    display: none;
+    border: 0.7px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 20px 10px;
+}
+
+/* Estilo al pasar el cursor sobre el botón "buscar" */
+.buscar:hover {
+    background-color: #870909;
+    border: #870909;
+}
+
+/* Estilo para la sección de información */
+.informacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
+}
+
+/* Estilo para cada subsección dentro de la sección de información */
+.tranquilidad,
+.trazabilidad,
+.simple {
+    width: 80%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Estilo para las imágenes en las subsecciones */
+.tranquilidad img,
+.trazabilidad img {
+    float: left;
+    margin-right: 10px;
+}
+
+.simple img {
+    float: right;
+    margin-left: 10px;
+}
+
+.tranquilidad img,
+.trazabilidad img,
+.simple img {
+    width: 160px;
+    height: auto;
+    margin: 10px;
+}
+
+/* Estilo para los títulos en las subsecciones */
+.tranquilidad h1,
+.trazabilidad h1,
+.simple h1 {
+    clear: both;
+    color: #870909;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+/* Estilo para los párrafos en las subsecciones */
+.tranquilidad p,
+.trazabilidad p,
+.simple p {
+    margin: 20px;
+    font-weight: 600;
+}
+
+/* Estilo para texto resaltado */
+strong {
+    font-weight: bolder;
+    color: #870909;
+    font-size: 1.1em;
+}
+
+/* Estilo para la sección de carrusel */
+.div-carrusel {
+    background-color: #F4F4F4;
+}
+
+/* Estilo para los títulos de la sección de carrusel */
+.titulos-carrusel {
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.titulos-carrusel h1 {
+    font-weight: bolder;
+    color: #870909;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+/* Estilo para los subtítulos en la sección de carrusel */
+.titulos-carrusel h3 {
+    padding-top: 5px;
+}
+
+/* Estilo para el carrusel de imágenes */
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100px;
+    padding: 80px;
+}
+
+/* Estilo para las imágenes en el carrusel */
+.carrusel img { 
+    z-index: 10;
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+/* Estilo al pasar el cursor sobre las imágenes en el carrusel */
+.carrusel img:hover {
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+/* Estilo para la sección de solicitud */
+.solicitar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+/* Estilo para la sección de autos disponibles */
+.div-disponible {
+    padding: 15px;
+    max-width: 1110px;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para los elementos de la lista dentro de la sección de autos disponibles */
+.div-disponible ul li {
+    position: relative;
+    float: left;
+    padding: 10px;
+}
+
+/* Estilo para los enlaces dentro de los elementos de la lista */
+.div-disponible ul li a {
+    font-size: 18px;
+    padding: 20px;
+    display: block;
+    color: #fff;
+}
+
+/* Estilo para el botón de autos disponibles */
+.btn-disponibles {
+    cursor: pointer;
+    display: none;
+    border-radius: 5px;
+    background-color: #870909;
+    padding: 20px 10px;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+/* Cambia el color de fondo del botón al pasar el cursor sobre él */
+.btn-disponibles:hover {
+    background-color: #630404b5;
+}
+
+/* Estilo para el texto dentro de la sección de solicitud */
+.texto-solicitar{
+    text-align: center;
+    margin: 150px;
+    margin-top: 0;
+}
+
+/* Estilo para el título dentro de la sección de solicitud */
+.texto-solicitar h1{
+    margin: 20px;
+    color: #870909;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+/* Estilo para los párrafos dentro de la sección de solicitud */
+.texto-solicitar p{
+    text-align: justify;
+    margin: 20px;
+    font-weight: 600;
+}
+
+/* Estilo para el contenedor del formulario */
+.form-container {
+    width: 100%;
+    padding: 30px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/* Estilo para cada grupo de campos de entrada en el formulario */
+.form-group {
+    margin-bottom: 60px;
+}
+
+/* Estilo para el grupo de campos de entrada */
+.form-group-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    margin: 10px;
+}
+
+.form-group-inline input {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.form-group-inline input,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para las etiquetas de los campos */
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #870909;
+}
+
+/* Estilo para el botón de solicitud */
+.btn-solicitud {
+    font-size: 1em;
+    font-weight: 700;
+    background-color: #870909;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo al pasar el cursor sobre el botón de solicitud */
+.btn-solicitud:hover {
+    background-color: #630404b5;
+}
+
+/*footer */
+.footer {
+    background-color: #F4F4F4;
+    color: #630404b5;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-top: auto;
+    position: relative;
+    width: 100%;
+    bottom: 0   ;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #630404b5;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.recaptcha {
+    font-size: 12px;
+    color: #030303;
+    margin-top: 15px;
+}
+
+/* Estilo para el título */
+.text h1 {
+    color: #870909;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+/* Estilo para la etiqueta del formulario */
+.label-product {
+    font-weight: bold;
+    color: #870909;
+    margin-bottom: 5px;
+}
+
+/* Estilo para el select */
+.select-product {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+/* Estilo para los botones del formulario */
+.btn-solicitud {
+    font-size: 1em;
+    font-weight: 700;
+    background-color: #870909;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 30px;
+}
+
+/* Efecto hover para los botones */
+.btn-solicitud:hover {
+    background-color: #630404b5;
+}
+.list-group{
+    margin: auto;
+}
+.list-group-item{
+    margin-top: 25px;
+}
+
+/* Estilo general para el formulario */
+.form-reservation {
+    background-color: #F4F4F4;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.productos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
