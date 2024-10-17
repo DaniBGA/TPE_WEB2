@@ -21,4 +21,13 @@ require_once './config.php';
         return $productos;
     }
 
+    public function getProductoUnico($id){
+        $query = $this->db->prepare('SELECT * FROM producto WHERE id = ?');
+        $query->execute([$id]);
+        $productos = $query->fetchAll(PDO::FETCH_OBJ);
+        return $productos;
+    }
+
+    
+
 }

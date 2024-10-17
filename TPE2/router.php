@@ -1,5 +1,6 @@
 <?php
 require_once './app/controllers/home.controller.php';
+require_once './app/controllers/auth.controller.php';
 require_once './app/controllers/categorias.controller.php';
 require_once './app/controllers/productos.controller.php';
 require_once './app/controllers/error.controller.php';
@@ -31,6 +32,9 @@ switch ($params[0]) {
         $controller = new ProductosController();
         $controller->procesarBtn();
         break;
+    case 'productoUnico':
+        $controller = new ProductosController();
+        $controller->showProductoUnico($params[1]);
     case 'auth':
         $controller = new AuthController();
         $controller->auth();

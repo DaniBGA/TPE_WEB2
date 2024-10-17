@@ -2,6 +2,6 @@
     Class ViewHome{
 
     function showHome($categorias){
-        require_once './templates/home.phtml';
+        require_once 'templates/home.phtml';
     }
 }
