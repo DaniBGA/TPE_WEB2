@@ -1,0 +1,26 @@
+<section class="book bg-secondary">
+    <div class="container flex_space">
+        <div class="text">
+            <h1><span>Busca </span> Tu producto:</h1>
+        </div>
+        
+        <div class="form-reservation p-3">
+            <form action="procesarBTN" method="POST">
+                <div class="form-group">
+                    <label for="Marcas" class="label-product">Ingrese la marca:</label>
+                    <select class="w-20 m-2 select-product" name="Marcas"> 
+                        <?php foreach($categorias as $categoria): ?>
+                            <option value="<?= $categoria->marca ?>"><?= $categoria->marca ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn-solicitud" name="accion" value="listSelectedMarcas">Mostrar autos</button>
+                    <button class="btn-solicitud" name="accion" value="listAutos">Mostrar todos los autos</button>      
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>

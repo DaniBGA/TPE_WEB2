@@ -1,0 +1,12 @@
+<section>
+<h1 class= "text-center text-white">Seleccione el producto: </h1>
+    <div>
+        <ul class="productos">
+            <?php foreach ($productos as $producto): ?> 
+                <li class="list-group-item">
+                    <a class="btn-solicitud" href="../TPE2/productoUnico/<?= $producto->ID ?>" class="text-decoration-none text-dark"> <?= $producto->nombre ?> </a>
+            <?php endforeach ?>
+        </ul>
+    </div>
+</section>
+<a class ="VolverBTN" href="home"><button  class="btn_volver"><-volver</button></a>
