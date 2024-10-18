@@ -38,15 +38,12 @@ class ABMController {
 
     function addProducto () {
         if (AuthHelper::verify()) {
-            if (empty($_POST['nombre']) || empty($_POST['motor']) || empty($_POST['precio']) || empty($_POST['marca']) || empty($_POST['detalles'])) {
-                $this->errorView->showError("Falta completar datos");
-                return;
-            }
-
             $nombre = $_POST['nombre'];
             $imagen = $_POST['imagen'];
+            $modelo = $_POST['modelo'];
             $precio = $_POST['precio'];
-            $marca = $_POST['marca'];
+            $id = $_POST['id'];
+            $kilometros = $_POST['kilometros'];
             $motor = $_POST['motor'];
             $detalles = $_POST['detalles'];
 
@@ -64,7 +61,7 @@ class ABMController {
                 }
             }
 
-            $this->productosModel->addProducto($nombre, $imagen, $precio, $marca, $motor, $detalles);
+            $this->productosModel->addProducto($nombre, $imagen, $id, $modelo, $motor, $kilometros, $detalles, $precio);
             header('Location: ' . PRODUCTOS);
         } else {
             header('Location: ' . HOME);

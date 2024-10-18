@@ -28,7 +28,8 @@ Class ProductosController{
         if ($productos) {
             $this->view->showProductos($productos);
         } else {
-            $this->errorview->showError("Producto no encontrado.");
+            $producto = $this->model->getSelectedproduct($marca);
+            $this->view->showSelectedProduct($producto);
         }
     }
 

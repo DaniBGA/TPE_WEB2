@@ -20,6 +20,18 @@ require_once './config.php';
         $marcas = $query->fetchALL(PDO::FETCH_OBJ);
         return $marcas;
     }
+    function getMarcaUnica ($id) {
+        $query = $this->db->prepare('SELECT marca FROM categoria WHERE id = ?');
+        $query->execute([$id]);
+        $categoria = $query->fetch(PDO::FETCH_OBJ);
+        return $categoria;
+    }
+    function getMarcaMenosUna ($id) {
+        $query = $this->db->prepare('SELECT marca FROM categoria WHERE id != ?');
+        $query->execute([$id]);
+        $categorias = $query->fetchAll(PDO::FETCH_OBJ);
+        return $categorias;
+    }
 
     function addMarca ($marca) {
         $query = $this->db->prepare('INSERT INTO categoria (marca) VALUES (?)');

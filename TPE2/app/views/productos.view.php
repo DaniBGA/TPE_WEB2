@@ -15,4 +15,9 @@
     function showProducto($producto){
         require_once './templates/productoUnico.phtml';
     }
+    function showAddProducto(){
+        require_once './templates/header.phtml';
+        require_once './templates/addProducto.phtml';
+        require_once './templates/footer.phtml';
+    }
 }
