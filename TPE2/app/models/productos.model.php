@@ -28,9 +28,6 @@ require_once './config.php';
         return $producto;
     }
 
-    function addProducto ($nombre, $imagen, $id, $modelo, $motor, $kilometros, $detalles, $precio) {
-        $query = $this->db->prepare('INSERT INTO productos ( nombre, imagen, id, modelo, motor, kilometros, detalles, precio) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
-        $query->execute([$nombre, $imagen, $id, $modelo, $motor, $kilometros, $detalles, $precio]);
+    
 
 }
-    }

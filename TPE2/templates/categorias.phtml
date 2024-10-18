@@ -1,16 +1,15 @@
 <section>
-    <h1 class="text-center text-white">Seleccione la marca: </h1>
+    <h1 class="text-center text-dark">Seleccione la marca: </h1>
     <div class="productos-container">
         <ul class="productos">
             <?php foreach ($marcas as $marca): ?> 
                 <li class="list-group-item">
-                    <a class="btn-solicitud text-decoration-none text-white     " href="../TPE2/productos/<?= $marca->marca ?>"> 
-                        <?= $marca->marca ?> 
-                    </a>
                     <?php if (AuthHelper::verify()): ?>
-                    <a href="./templates/delete/<?= $marca->id ?>">
-                        <button class="btn btn-danger">Eliminar</button>
-                    </a>
+                        <a href="./showUpdateMarca/<?= $marca->id ?>"><button class="btn_editar">Editar</button></a>
+                    <?php endif; ?>
+                        <a class="btn-solicitud text-decoration-none text-white " href="../TPE2/productos/<?= $marca->marca ?>"><?= $marca->marca ?></a>
+                    <?php if (AuthHelper::verify()): ?>
+                        <a href="./delete/<?= $marca->id ?>"><button class="btn btn-danger">Eliminar</button></a>
                     <?php endif; ?>
                 </li>
             <?php endforeach ?>
@@ -22,6 +21,6 @@
 </a>
 <?php if (AuthHelper::verify()): ?>
 <a href="./addMarca">
-    <button class="btn btn-success">Agregar</button>
+    <button class="btn_agregar">Agregar</button>
 </a>
 <?php endif; ?>

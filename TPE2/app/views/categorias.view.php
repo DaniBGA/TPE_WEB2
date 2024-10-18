@@ -12,10 +12,4 @@
         require_once './templates/footer.phtml';
     }
 
-    function showAddMarca(){
-        require_once './templates/header.phtml';
-        require_once './templates/addCategoria.phtml';
-        require_once './templates/footer.phtml';
-    }
-
 }

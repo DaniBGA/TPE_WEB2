@@ -38,12 +38,15 @@ class ABMController {
 
     function addProducto () {
         if (AuthHelper::verify()) {
+            if (empty($_POST['nombre']) || empty($_POST['motor']) || empty($_POST['precio']) || empty($_POST['marca']) || empty($_POST['detalles'])) {
+                $this->errorView->showError("Falta completar datos");
+                return;
+            }
+
             $nombre = $_POST['nombre'];
             $imagen = $_POST['imagen'];
-            $modelo = $_POST['modelo'];
             $precio = $_POST['precio'];
-            $id = $_POST['id'];
-            $kilometros = $_POST['kilometros'];
+            $marca = $_POST['marca'];
             $motor = $_POST['motor'];
             $detalles = $_POST['detalles'];
 
@@ -61,7 +64,7 @@ class ABMController {
                 }
             }
 
-            $this->productosModel->addProducto($nombre, $imagen, $id, $modelo, $motor, $kilometros, $detalles, $precio);
+            $this->productosModel->addProducto($nombre, $imagen, $precio, $marca, $motor, $detalles);
             header('Location: ' . PRODUCTOS);
         } else {
             header('Location: ' . HOME);
@@ -156,12 +159,12 @@ class ABMController {
 
     function showUpdateCategoria ($id) {
         if (AuthHelper::verify()) {
-            $categoria = $this->categoriaModel->getMarcaUnica($id);
-            if (!$categoria) {
-                $this->errorView->showError("La categoria no existe");
+            $marca = $this->categoriaModel->getMarcaUnica($id);
+            if (!$marca) {
+                $this->errorView->showError("La marca no existe");
                 return;
             }
-            $this->abmView->showUpdateCategoria($categoria);
+            $this->abmView->showUpdateMarca($marca);
         } else {
             header('Location: ' . HOME);
         }
@@ -182,10 +185,10 @@ class ABMController {
                 return;
             }
 
-            $categorias = $this->categoriaModel->getCategoriasMenosUna($id);
+            $categorias = $this->categoriaModel->getMarcaMenosUna($id);
             foreach ($categorias as $categoria) {
-                if ($nombre == $categoria->nombre_gen) {
-                    $this->errorView->showError("Ya existe una categoria con este nombre");
+                if ($nombre == $categoria->marca) {
+                    $this->errorView->showError("Ya existe una marca con este nombre");
                     return;
                 }
             }

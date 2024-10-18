@@ -78,15 +78,15 @@ switch ($params[0]) {
         $controller = new ABMController();
         $controller->addCategoria();
         break;
-    case 'showUpdateCategoria':
+    case 'showUpdateMarca':
         $controller = new ABMController();
-        $controller->showUpdateCategoria($params[1]);
+        $controller->showUpdateMarca($params[1]);
         break;
-    case 'updateCategoria':
+    case 'updateMarca':
         $controller = new ABMController();
-        $controller->updateCategoria($params[1]);
+        $controller->updateMarca($params[1]);
         break;
-    case 'deleteCategoria':
+    case 'deleteMarca':
         $controller = new ABMController();
         $controller->deleteCategoria($params[1]);
         break;

@@ -20,12 +20,14 @@ require_once './config.php';
         $marcas = $query->fetchALL(PDO::FETCH_OBJ);
         return $marcas;
     }
+
     function getMarcaUnica ($id) {
         $query = $this->db->prepare('SELECT marca FROM categoria WHERE id = ?');
         $query->execute([$id]);
         $categoria = $query->fetch(PDO::FETCH_OBJ);
         return $categoria;
     }
+
     function getMarcaMenosUna ($id) {
         $query = $this->db->prepare('SELECT marca FROM categoria WHERE id != ?');
         $query->execute([$id]);
@@ -38,9 +40,9 @@ require_once './config.php';
         $query->execute([$marca]);
     }
 
-    function updateMarca ($id, $marca, $descripcion) {
+    function updateMarca ($id, $marca) {
         $query = $this->db->prepare('UPDATE categoria SET marca = ?, descripcion WHERE id = ?');
-        $query->execute([$id, $marca, $descripcion]);
+        $query->execute([$id, $marca]);
     }
 
     function deleteMarca ($id) {

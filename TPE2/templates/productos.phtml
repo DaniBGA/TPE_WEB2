@@ -5,19 +5,8 @@
             <?php foreach ($productos as $producto): ?> 
                 <li class="list-group-item">
                     <a class="btn-solicitud" href="../TPE2/productoUnico/<?= $producto->ID ?>" class="text-decoration-none text-dark"> <?= $producto->nombre ?> </a>
-                    <?php if (AuthHelper::verify()): ?>
-                <span>---</span>
-                <button class="btn btn-success"><a class="text-white text-decoration-none" href="showUpdateProducto/<?= $producto->id_producto ?>">Editar </a></button>
-                <span>---</span>
-                <button class="btn btn-danger"><a class="text-white text-decoration-none" href="deleteProducto/<?= $producto->id_producto ?>" >Eliminar </a></button>
-            <?php endif; ?>
             <?php endforeach ?>
         </ul>
     </div>
 </section>
 <a class ="VolverBTN" href="home"><button  class="btn_volver"><-volver</button></a>
-<?php if (AuthHelper::verify()): ?>
-<a href="./showAddProducto">
-    <button class="btn btn-success">Agregar</button>
-</a>
-<?php endif; ?>
