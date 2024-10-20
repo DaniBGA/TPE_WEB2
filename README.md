@@ -55,13 +55,13 @@ password: contraseña del usuario.
 role: rol del usuario.
 
 en esta actualizacion de la pagina se logro que con un usuario administrador "usuario: admin, password: admin", logra realizar modificaciones como: 
--agregar producto.
--update producto.
--eliminar producto.
--agregar categoria.
--editar categoria.
--eliminar categoria.
--
+.agregar producto.
+.update producto.
+.eliminar producto.
+.agregar categoria.
+.editar categoria.
+.eliminar categoria.
+
 
 
 ademas tambien cuenta con un usuario comun para corroborar que no pueda acceder a ninguna funcion que solo pueda realizar un admin.
