@@ -1,0 +1,51 @@
+<?php require 'templates/header.phtml'; ?>
+
+<div class="mt-5 w-25 mx-auto">
+    <form method="POST" action="updateProducto/<?= $producto->ID ?>">
+        <div class="form-group">
+            <label class="text-dark" for="nombre">Nuevo nombre</label>
+            <input type="text" required class="form-control" id="nombre" name="nombre" aria-describedby="userHelp" value =  "<?= $producto->nombre ?>">
+        </div>
+        <div class="form-group">
+            <label class="text-dark" for="descripcion">Nueva imagen</label>
+            <input type="text" required class="form-control" id="imagen" name="imagen" value =  "<?= $producto->imagen ?>">
+        </div>
+        <div class="form-group">
+            <label class="text-dark" for="marca">Categoria</label>
+            <select name="categoria">
+                <?php foreach ($categorias as $categoria): ?>
+                    <option value="<?= $categoria->id ?>"><?= $categoria->marca ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="text-dark" for="modelo">Nuevo modelo</label>
+            <input type="number" required class="form-control" id="modelo" name="modelo" value =  "<?= $producto->modelo ?>">
+        </div>
+        <div class="form-group">
+            <label class="text-dark" for="motor">Nueva motor</label>
+            <input type="text" required class="form-control" id="motor" name="motor" value =  "<?= $producto->motor ?>">
+        </div>
+        <div class="form-group">
+            <label class="text-dark" for="kilometros">Nuevo Kilometraje</label>
+            <input type="number" required class="form-control" id="kilometros" name="kilometros" value =  "<?= $producto->kilometros ?>">
+        </div>
+        <div class="form-group">
+            <label class="text-dark" for="detalles">Nuevos detalles</label>
+            <input type="text" required class="form-control" id="detalles" name="detalles" value =  "<?= $producto->detalles ?>">
+        </div>
+        <div class="form-group">
+            <label class="text-dark" for="precio">Nuevo precio</label>
+            <input type="number" required class="form-control" id="precio" name="precio" value =  "<?= $producto->precio ?>">
+        </div>
+        <?php if (isset($error)): ?>
+            <div class='alert alert-danger' role='alert'>
+                <?= $error ?>
+            </div> 
+        <?php endif; ?>
+
+        <button type="submit" class="btn btn-primary mt-3">Editar</button>
+    </form>
+</div>
+
+<?php require 'templates/footer.phtml'; ?>

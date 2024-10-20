@@ -14,12 +14,12 @@ Class ProductosController{
         $this->view = new ViewProductos();
     }
 
-    function showProductoUnico($id){
-        $producto = $this->model->getProductoUnico($id);
+    function showProductoUnico($ID): void {
+        $producto = $this->model->getProductoUnico($ID);
         if ($producto) {
-            $this->view->showProducto($producto);
+            $this->view->showProducto(producto: $producto);
         } else {
-            $this->errorview->showError("Producto no encontrado.");
+            $this->errorview->showError(error: "Producto no encontrado.");
         }
     }
 

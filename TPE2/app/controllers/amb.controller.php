@@ -102,13 +102,13 @@ class ABMController {
             $motor = $_POST['motor'];
             $detalles = $_POST['detalles'];
 
-            $producto = $this->productosModel->getProductoUnico($id);
+            $producto = $this->productosModel->getProductoUnico($id_marca);
             if (!$producto) {
                 $this->errorView->showError("El producto no existe");
                 return;
             }
 
-            $productos = $this->productosModel->getProductosMenosUno($id);
+            $productos = $this->productosModel->getProductosMenosUno($id_marca);
             foreach ($productos as $producto) {
                 if ($nombre == $producto->nombre) {
                     $this->errorView->showError("Ya existe un producto con este nombre");

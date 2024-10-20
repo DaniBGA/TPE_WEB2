@@ -22,7 +22,7 @@ require_once './config.php';
     }
 
     public function getProductoUnico($id){
-        $query = $this->db->prepare('SELECT * FROM producto WHERE id = ?');
+        $query = $this->db->prepare('SELECT * FROM producto WHERE ID = ?');
         $query->execute([$id]);
         $producto = $query->fetch(PDO::FETCH_OBJ);
         return $producto;
@@ -39,5 +39,12 @@ require_once './config.php';
         $producto = $query->fetchALL(PDO::FETCH_OBJ);
         return $producto;
     }
-    
+    function deleteProducto ($id) {
+        $query = $this->db->prepare('DELETE FROM producto WHERE ID = ?');
+        $query->execute([$id]);
+    }
+    function updateProducto ($nombre, $imagen, $id_marca, $modelo, $motor, $kilometros, $detalles, $precio,$ID) {
+        $query = $this->db->prepare('UPDATE producto SET nombre = ?, imagen = ?, id_marca = ?, modelo = ?, mmotor = ?, kilometros = ?, detalles = ?, precio = ? WHERE ID = ?');
+        $query->execute([$nombre, $imagen, $id_marca, $modelo, $motor, $kilometros, $detalles, $precio,$id_marca, $ID]);
+    }
 }
