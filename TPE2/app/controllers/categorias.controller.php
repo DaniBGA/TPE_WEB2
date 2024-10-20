@@ -12,7 +12,7 @@ require_once './app/views/error.view.php';
         $this->view = new ViewCategorias();
     }
     public function showCategorias(){
-        $categorias = $this->model->getCategorias();
+        $categorias = $this->model->getMarcas();
          $this->view->showCategorias($categorias);
     }
 

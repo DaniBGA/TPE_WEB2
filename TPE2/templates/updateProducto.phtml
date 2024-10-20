@@ -12,9 +12,9 @@
         </div>
         <div class="form-group">
             <label class="text-dark" for="marca">Categoria</label>
-            <select name="categoria">
-                <?php foreach ($categorias as $categoria): ?>
-                    <option value="<?= $categoria->id ?>"><?= $categoria->marca ?></option>
+            <select name="id_marca">
+                <?php foreach ($marcas as $marca): ?>
+                    <option value="<?= $marca->id ?>"><?= $marca->marca ?></option>
                 <?php endforeach; ?>
             </select>
         </div>

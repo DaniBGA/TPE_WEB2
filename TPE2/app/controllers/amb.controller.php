@@ -38,7 +38,7 @@ class ABMController {
 
     function addProducto () {
         if (AuthHelper::verify()) {
-            if (empty($_POST['nombre']) || empty($_POST['imagen']) || empty($_POST['modelo']) || empty($_POST['precio']) || empty($_POST['id_marca']) || empty($_POST['kilometros']) || empty($_POST['motor']) || empty($_POST['detalles'])) {
+            if (empty($_POST['nombre']) || empty($_POST['imagen']) || empty($_POST['modelo']) || empty($_POST['precio']) || empty($_POST['id_marca']) || (empty($_POST['kilometros']) && $_POST['kilometros'] < 0) || empty($_POST['motor']) || empty($_POST['detalles'])) {
                 $this->errorView->showError("Falta completar datos");
                 return;
             }
@@ -76,8 +76,8 @@ class ABMController {
         if (AuthHelper::verify()) {
             $producto = $this->productosModel->getProductoUnico($id);
             if ($producto) {
-                $categorias = $this->categoriaModel->getCategorias();
-                $this->abmView->showUpdateProducto($categorias, $producto);
+                $marcas = $this->categoriaModel->getMarcas();
+                $this->abmView->showUpdateProducto($marcas, $producto);
             } else {
                 $this->errorView->showError("El producto no existe");
             }
@@ -86,9 +86,9 @@ class ABMController {
         };
     }
 
-    function updateProducto ($id_producto) {
+    function updateProducto ($id) {
         if (AuthHelper::verify()) {
-            if (empty($_POST['nombre']) || empty($_POST['imagen']) || empty($_POST['modelo']) || empty($_POST['precio']) || empty($_POST['id_marca']) || empty($_POST['kilometros']) || empty($_POST['motor']) || empty($_POST['detalles'])) {
+            if (empty($_POST['nombre']) || empty($_POST['imagen']) || empty($_POST['modelo']) || empty($_POST['precio']) || empty($_POST['id_marca']) || (!isset($_POST['kilometros']) && ($_POST['kilometros'] < 0)) || empty($_POST['motor']) || empty($_POST['detalles'])) {
                 $this->errorView->showError("Falta completar datos");
                 return;
             }
@@ -102,20 +102,20 @@ class ABMController {
             $motor = $_POST['motor'];
             $detalles = $_POST['detalles'];
 
-            $producto = $this->productosModel->getProductoUnico($id_marca);
+            $producto = $this->productosModel->getProductoUnico($id);
             if (!$producto) {
                 $this->errorView->showError("El producto no existe");
                 return;
             }
 
-            $productos = $this->productosModel->getProductosMenosUno($id_marca);
+            $productos = $this->productosModel->getProductosMenosUno($id);
             foreach ($productos as $producto) {
                 if ($nombre == $producto->nombre) {
                     $this->errorView->showError("Ya existe un producto con este nombre");
                     return;
                 }
             }
-            $this->productosModel->updateProducto($nombre, $imagen, $id_marca, $modelo, $motor, $kilometros, $detalles, $precio);
+            $this->productosModel->updateProducto($nombre, $imagen, $id_marca, $modelo, $motor, $kilometros, $detalles, $precio, $id);
             header('Location: ' . CATEGORIA);
         } else {
             header('Location: ' . HOME);

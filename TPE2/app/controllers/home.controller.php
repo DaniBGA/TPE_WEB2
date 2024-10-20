@@ -11,7 +11,7 @@ require_once './app/views/error.view.php';
         $this->view = new ViewHome();
     }
     public function showHome(){
-        $categorias = $this->model->getCategorias();
+        $categorias = $this->model->getMarcas();
          $this->view->showHome($categorias);
     }
 }

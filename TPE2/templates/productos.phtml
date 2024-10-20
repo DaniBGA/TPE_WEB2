@@ -4,7 +4,7 @@
         <ul class="productos">
             <?php foreach ($productos as $producto): ?> 
                 <li class="list-group-item">
-                    <a class="btn-solicitud" href="../TPE2/productoUnico/<?= $producto->marca ?>" class="text-decoration-none text-dark"> <?= $producto->nombre ?> </a>
+                    <a class="btn-solicitud" href="../TPE2/productoUnico/<?= $producto->ID ?>" class="text-decoration-none text-dark"> <?= $producto->nombre ?> </a>
                     <?php if (AuthHelper::verify()): ?>
                 <span>---</span>
                 <button class="btn btn-success"><a class="text-white text-decoration-none" href="showUpdateProducto/<?= $producto->ID ?>">Editar </a></button>

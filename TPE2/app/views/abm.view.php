@@ -14,7 +14,7 @@ class ABMView {
         require "templates/addCategoria.phtml";
     }
 
-    function showUpdateProducto ($categorias, $producto) {
+    function showUpdateProducto ($marcas, $producto) {
         require "templates/updateProducto.phtml";
     }
 
